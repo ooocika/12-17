@@ -1,0 +1,21 @@
+class Server{
+
+Cache cache;
+
+
+User GetUserInfo(const int user_id)const{
+  Data user_data = cache.find(user_id);
+
+  if(!user_data){
+    user_data = Database.find(user_id);
+
+   // cache.update(user_id, user_data);
+    mutable Cache cache;
+    
+  }
+
+  
+  return User(user_data);
+  
+}
+};
